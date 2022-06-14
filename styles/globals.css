@@ -1,5 +1,6 @@
 html,
-body {
+body,
+#__next {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -12,6 +13,20 @@ a {
   text-decoration: none;
 }
 
+button {
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   box-sizing: border-box;
+  width: 100%;
 }
