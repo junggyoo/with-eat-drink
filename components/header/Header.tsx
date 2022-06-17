@@ -11,7 +11,11 @@ export default function Header() {
 }
 
 const HeaderWrapper = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 14px 0;
+  background-color: white;
   text-align: center;
   border-bottom: 1px solid #000;
 `

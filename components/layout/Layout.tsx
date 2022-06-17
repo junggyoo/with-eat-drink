@@ -21,4 +21,5 @@ export default function Layout({ children }: LayoutProps) {
 
 const Contents = styled.main`
   height: 100%;
+  margin-top: 51px;
 `

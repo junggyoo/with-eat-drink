@@ -32,9 +32,11 @@ export default function BottomNavBar() {
 
 const BottomNavBarWrapper = styled.div`
   position: fixed;
+  width: 100%;
   bottom: 0;
   padding-top: 11px;
   padding-bottom: 41px;
+  background-color: white;
   border-top: 1px solid #000;
 `
 
