@@ -7,5 +7,6 @@
     "activityBar.inactiveForeground": "#15202b99",
     "statusBar.background": "#8E75E2",
     "statusBar.foreground": "#15202b",
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
