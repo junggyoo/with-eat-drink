@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 interface ButtonProps {
-  children: React.ReactNode
-  type?: 'reset' | 'submit' | "button"
+  children: React.ReactNode;
+  type?: "reset" | "submit" | "button";
   width?: string;
   height?: string;
   marginTop?: string;
@@ -13,17 +13,18 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export default function Button({ 
-  children,  
-  type = 'button', 
-  width = '100%', 
-  height = '44px', 
-  fontSize = '16px', 
+export default function Button({
+  children,
+  type = "button",
+  width = "100%",
+  height = "44px",
+  fontSize = "16px",
   marginTop,
   marginRight,
   marginBottom,
   marginLeft,
-  onClick, }: ButtonProps) {
+  onClick,
+}: ButtonProps) {
   return (
     <>
       <ButtonWrapper
@@ -35,14 +36,15 @@ export default function Button({
         marginBottom={marginBottom}
         marginLeft={marginLeft}
         fontSize={fontSize}
-        onClick={onClick}>
+        onClick={onClick}
+      >
         {children}
       </ButtonWrapper>
     </>
-  )
+  );
 }
 
-const ButtonWrapper = styled.button<Omit<ButtonProps, 'children'>>`
+const ButtonWrapper = styled.button<Omit<ButtonProps, "children">>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   margin-top: ${({ marginTop }) => marginTop};
@@ -53,4 +55,4 @@ const ButtonWrapper = styled.button<Omit<ButtonProps, 'children'>>`
   background-color: #8e75e2;
   color: #fff;
   border-radius: 22px;
-`
+`;

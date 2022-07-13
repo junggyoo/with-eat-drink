@@ -1,1 +1,1 @@
-export { default as Avator } from './Avator';
+export { default } from "./Avator";

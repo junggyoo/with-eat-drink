@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { Button } from "../../components/button";
-import { Link } from "../../components/link";
+import router from "next/router";
+import { Button, Link } from "../../components";
 import WelcomeLogoImg from "../../assets/icons/welcome-logo-img.svg";
 import WelcomeLogoText from "../../assets/icons/welcome-logo-text.svg";
 
 export default function Welcome() {
+  const handleStarterClick = () => {
+    router.push("/starter/name");
+  };
+
   return (
     <WelcomeWrapper>
       <LogoContainer>
@@ -16,7 +20,7 @@ export default function Welcome() {
         </LogoTextContainer>
       </LogoContainer>
       <ButtonsWrapper>
-        <Button marginBottom="28px" width="100%">
+        <Button marginBottom="28px" width="100%" onClick={handleStarterClick}>
           시작하기
         </Button>
         <Link href="/">이미 계정이 있어요</Link>

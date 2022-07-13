@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Layout } from "../../components/layout";
-import Party from "./components/Party";
+import Layout from "../../components/layout";
+import { Party } from "./components";
 
 export interface DataProps {
   name: string;

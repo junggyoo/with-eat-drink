@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Avator } from "../../../components/avator";
-import { DataProps } from "../Main";
-import Category from "./Category";
+import Avator from "../../../../components/avator";
+import { DataProps } from "../../Main";
+import Category from "../category/Category";
 import JoinHandsUp from "../../../assets/icons/join-hands-up.svg";
 import LikeInactive from "../../../assets/icons/like-inactive.svg";
 import Comment from "../../../assets/icons/comment.svg";

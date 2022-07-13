@@ -1,1 +1,1 @@
-export { default as BottomNavBar } from './BottomNavBar'
+export { default } from "./BottomNavBar";
