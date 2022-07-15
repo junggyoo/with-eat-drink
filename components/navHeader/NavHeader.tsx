@@ -27,7 +27,7 @@ const NavHeaderWrapper = styled.header`
   padding: 14px 0;
   background-color: white;
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #dadada;
 `;
 
 const LeftNav = styled.span`

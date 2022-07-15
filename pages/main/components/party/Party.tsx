@@ -5,16 +5,23 @@ import Category from "../category/Category";
 import JoinHandsUp from "../../../../assets/icons/join-hands-up.svg";
 import LikeInactive from "../../../../assets/icons/like-inactive.svg";
 import Comment from "../../../../assets/icons/comment.svg";
+import { IconButton } from "../../../../components";
 
-export default function Party({
-  name,
-  fullName,
-  department,
-  contents,
-  distance,
-  category,
-  attendees,
-}: DataProps) {
+interface PartyProps {
+  data: DataProps;
+  onCommentClick: () => void;
+}
+
+export default function Party({ data, onCommentClick }: PartyProps) {
+  const {
+    name,
+    fullName,
+    department,
+    contents,
+    distance,
+    category,
+    attendees,
+  } = data;
   return (
     <PartyWrapper>
       <WriterInfo>
@@ -37,9 +44,7 @@ export default function Party({
           <Icon>
             <LikeInactive />
           </Icon>
-          <Icon>
-            <Comment />
-          </Icon>
+          <IconButton icon={<Comment />} onClick={onCommentClick} />
         </PartyActions>
         <PartyAttendees>
           <AttendeesAvator>
@@ -62,7 +67,6 @@ export default function Party({
 }
 
 const PartyWrapper = styled.article`
-  min-height: 193px;
   padding: 20px;
   border-bottom: 1px solid lightgray;
 `;

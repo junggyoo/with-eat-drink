@@ -1,3 +1,4 @@
+import router from "next/router";
 import styled from "styled-components";
 import Layout from "../../components/layout";
 import { Party } from "./components";
@@ -111,19 +112,17 @@ export const PARTY_DATA: DataProps[] = [
 ];
 
 export default function Main() {
+  const handleCommentClick = () => {
+    router.push("/main/comment");
+  };
   return (
     <Layout>
       <MainWrapper>
         {PARTY_DATA.map((data) => (
           <Party
             key={data.name}
-            name={data.name}
-            fullName={data.fullName}
-            department={data.department}
-            contents={data.contents}
-            distance={data.distance}
-            category={data.category}
-            attendees={data.attendees}
+            data={data}
+            onCommentClick={handleCommentClick}
           />
         ))}
       </MainWrapper>
