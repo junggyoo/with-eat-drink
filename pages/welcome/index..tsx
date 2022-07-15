@@ -23,7 +23,7 @@ export default function Welcome() {
         <Button marginBottom="28px" width="100%" onClick={handleStarterClick}>
           시작하기
         </Button>
-        <Link href="/">이미 계정이 있어요</Link>
+        <Link href="/login">이미 계정이 있어요</Link>
       </ButtonsWrapper>
     </WelcomeWrapper>
   );

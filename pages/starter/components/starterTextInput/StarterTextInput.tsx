@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 interface StarterTextInputWrapperProps {
   placeholder?: string;
+  type?: "text" | "password" | "email" | "number";
 }
 
 export default function StarterTextInput({
+  type = "text",
   placeholder,
 }: StarterTextInputWrapperProps) {
   return (
     <StarterTextInputWrapper>
-      <TextInput placeholder={placeholder} />
+      <TextInput type={type} placeholder={placeholder} />
     </StarterTextInputWrapper>
   );
 }

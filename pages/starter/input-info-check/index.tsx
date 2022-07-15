@@ -5,8 +5,8 @@ import Back from "../../../assets/icons/back.svg";
 import styled from "styled-components";
 
 export default function InputInfoCheck() {
-  const handleNextButtonClick = () => {
-    router.push("/starter/input-info-check");
+  const handleSignupClick = () => {
+    router.push("/login");
   };
 
   const handleBackButtonClick = () => {
@@ -30,11 +30,7 @@ export default function InputInfoCheck() {
           <Info>lorem.kim@meshkorea.net</Info>
         </InputInfos>
       </InputInfoContainer>
-      <Button
-        marginTop="165px"
-        marginBottom="16px"
-        onClick={handleNextButtonClick}
-      >
+      <Button marginTop="165px" marginBottom="16px" onClick={handleSignupClick}>
         가입하기
       </Button>
     </StarterLayout>

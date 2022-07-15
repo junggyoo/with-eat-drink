@@ -4,11 +4,13 @@ import { IconButton, NavHeader } from "../../../../components";
 import Close from "../../../../assets/icons/close.svg";
 
 interface StarterLayoutWrapperProps {
+  title?: string;
   leftNav?: React.ReactNode;
   children: React.ReactNode;
 }
 
 export default function StarterLayout({
+  title = "시작하기",
   leftNav,
   children,
 }: StarterLayoutWrapperProps) {
@@ -18,7 +20,7 @@ export default function StarterLayout({
   return (
     <StarterLayoutWrapper>
       <NavHeader
-        title="시작하기"
+        title={title}
         leftNav={leftNav}
         rightNav={
           <IconButton icon={<Close />} onClick={handleCloseButtonClick} />
