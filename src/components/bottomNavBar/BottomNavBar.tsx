@@ -1,20 +1,24 @@
 import styled from "styled-components";
+import Map from "public/icons/map.svg";
+import Create from "public/icons/create.svg";
+import MyInfo from "public/icons/my-info.svg";
+import Link from "next/link";
 
 const NAV_ITEMS = [
   {
     id: 1,
-    name: "map",
-    icon: null,
+    url: "/map",
+    icon: <Map />,
   },
   {
     id: 2,
-    name: "home",
-    icon: null,
+    url: "/create-party",
+    icon: <Create />,
   },
   {
     id: 3,
-    name: "my",
-    icon: null,
+    url: "my-info",
+    icon: <MyInfo />,
   },
 ];
 
@@ -23,7 +27,11 @@ export default function BottomNavBar() {
     <BottomNavBarWrapper>
       <NavContainer>
         {NAV_ITEMS.map((item) => (
-          <NavItem key={item.id}>{item.name}</NavItem>
+          <NavItem key={item.id}>
+            <Link href={item.url}>
+              <a>{item.icon}</a>
+            </Link>
+          </NavItem>
         ))}
       </NavContainer>
     </BottomNavBarWrapper>

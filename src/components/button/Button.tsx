@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface ButtonProps {
   children: React.ReactNode;
   type?: "reset" | "submit" | "button";
+  status?: "primary" | "text";
   width?: string;
   height?: string;
   marginTop?: string;
@@ -16,6 +17,7 @@ interface ButtonProps {
 export default function Button({
   children,
   type = "button",
+  status = "primary",
   width = "100%",
   height = "44px",
   fontSize = "16px",
@@ -29,6 +31,7 @@ export default function Button({
     <>
       <ButtonWrapper
         type={type}
+        status={status}
         width={width}
         height={height}
         marginTop={marginTop}
@@ -47,12 +50,34 @@ export default function Button({
 const ButtonWrapper = styled.button<Omit<ButtonProps, "children">>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
+
   margin-top: ${({ marginTop }) => marginTop};
   margin-right: ${({ marginRight }) => marginRight};
   margin-bottom: ${({ marginBottom }) => marginBottom};
   margin-left: ${({ marginLeft }) => marginLeft};
+
+  background-color: ${({ status }) => {
+    switch (status) {
+      case "primary":
+        return "#8e75e2";
+      case "text":
+      default:
+        return "#fff";
+    }
+  }};
+
+  color: ${({ status }) => {
+    switch (status) {
+      case "primary":
+        return "#fff";
+      case "text":
+      default:
+        return "#8e75e2";
+    }
+  }};
+
   font-size: ${({ fontSize }) => fontSize};
-  background-color: #8e75e2;
-  color: #fff;
+  font-weight: 600;
+
   border-radius: 22px;
 `;

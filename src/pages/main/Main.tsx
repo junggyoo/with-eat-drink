@@ -10,7 +10,6 @@ export interface DataProps {
   contents: string;
   distance: string;
   category: string;
-  attendees: { name: string }[];
 }
 
 export const PARTY_DATA: DataProps[] = [
@@ -21,17 +20,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "점심에 냉삼 드실 분 손~",
     distance: "20m",
     category: "점심",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "용강",
@@ -40,17 +28,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "저녁에 파스타 드실분 ㅎㅎ",
     distance: "20m",
     category: "저녁",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "송박",
@@ -59,17 +36,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "점심에 바스버거 같이 시켜드실 분!",
     distance: "20m",
     category: "점심",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "태최",
@@ -78,17 +44,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "퇴근하고 위스키 바 가실 파티원 구해용!",
     distance: "20m",
     category: "저녁",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "예주",
@@ -97,17 +52,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "점심 돈까스 파티 구해요~~ 컴온!",
     distance: "20m",
     category: "점심",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "예주",
@@ -116,17 +60,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "점심 돈까스 파티 구해요~~ 컴온!",
     distance: "20m",
     category: "점심",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
   {
     name: "예주",
@@ -135,17 +68,6 @@ export const PARTY_DATA: DataProps[] = [
     contents: "점심 돈까스 파티 구해요~~ 컴온!",
     distance: "20m",
     category: "점심",
-    attendees: [
-      {
-        name: "정배",
-      },
-      {
-        name: "용강",
-      },
-      {
-        name: "송박",
-      },
-    ],
   },
 ];
 

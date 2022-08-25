@@ -12,15 +12,7 @@ interface PartyProps {
 }
 
 export default function Party({ data, onCommentClick }: PartyProps) {
-  const {
-    name,
-    fullName,
-    department,
-    contents,
-    distance,
-    category,
-    attendees,
-  } = data;
+  const { name, fullName, department, contents, distance, category } = data;
   return (
     <PartyWrapper>
       <WriterInfo>
@@ -45,21 +37,7 @@ export default function Party({ data, onCommentClick }: PartyProps) {
           </Icon>
           <IconButton icon={<Comment />} onClick={onCommentClick} />
         </PartyActions>
-        <PartyAttendees>
-          <AttendeesAvator>
-            {attendees?.map((user) => (
-              <Avator
-                key={user.name}
-                name={user.name}
-                width="24px"
-                height="24px"
-                fontSize="10px"
-                marginRight="-12px"
-              />
-            ))}
-          </AttendeesAvator>
-          <AttendeesCount>현재 3/4명 참여중</AttendeesCount>
-        </PartyAttendees>
+        <AttendeesCount>현재 3/4명 참여중</AttendeesCount>
       </PartyJoinContainer>
     </PartyWrapper>
   );
@@ -120,15 +98,6 @@ const Icon = styled.span`
   width: 30px;
   height: 30px;
   margin-right: 16px;
-`;
-
-const PartyAttendees = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const AttendeesAvator = styled.div`
-  margin-right: 19px;
 `;
 
 const AttendeesCount = styled.div`

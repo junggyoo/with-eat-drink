@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Avator, IconButton, NavHeader } from "components";
+import { Avator, IconButton, NavHeader } from "src/components";
 import { Category } from "../components";
 import Back from "public/icons/back.svg";
 import router from "next/router";

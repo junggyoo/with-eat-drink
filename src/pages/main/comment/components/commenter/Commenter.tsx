@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Avator } from "components";
+import { Avator } from "src/components";
 
 interface CommenterData {
   name: string;
