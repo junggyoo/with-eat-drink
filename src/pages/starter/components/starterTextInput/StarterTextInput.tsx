@@ -3,15 +3,24 @@ import styled from "styled-components";
 interface StarterTextInputWrapperProps {
   placeholder?: string;
   type?: "text" | "password" | "email" | "number";
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function StarterTextInput({
   type = "text",
   placeholder,
+  value,
+  onChange,
 }: StarterTextInputWrapperProps) {
   return (
     <StarterTextInputWrapper>
-      <TextInput type={type} placeholder={placeholder} />
+      <TextInput
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
     </StarterTextInputWrapper>
   );
 }

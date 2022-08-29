@@ -7,8 +7,16 @@ import {
   InputContainer,
 } from "../components";
 import Back from "public/icons/back.svg";
+import { useRecoilState } from "recoil";
+import { departmentState } from "src/states/starter";
 
 export default function StartDepartment() {
+  const [department, setDepartment] = useRecoilState(departmentState);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDepartment(e.target.value);
+  };
+
   const handleNextButtonClick = () => {
     router.push("/starter/email");
   };
@@ -24,11 +32,16 @@ export default function StartDepartment() {
         <StarterInputField>
           이름 옆에 표시되는 부서명을 알려주세요
         </StarterInputField>
-        <StarterTextInput placeholder="웹프론트엔드팀" />
+        <StarterTextInput
+          placeholder="웹프론트엔드팀"
+          value={department}
+          onChange={handleInputChange}
+        />
       </InputContainer>
       <Button
         marginTop="165px"
         marginBottom="16px"
+        disabled={!department}
         onClick={handleNextButtonClick}
       >
         다음

@@ -3,8 +3,12 @@ import { Button, IconButton } from "src/components";
 import { StarterLayout } from "../components";
 import Back from "public/icons/back.svg";
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { starterInputState } from "src/states/starter";
 
 export default function InputInfoCheck() {
+  const { name, department, email } = useRecoilValue(starterInputState);
+
   const handleSignupClick = () => {
     router.push("/login");
   };
@@ -25,9 +29,9 @@ export default function InputInfoCheck() {
           <Field>이메일</Field>
         </Fieldes>
         <InputInfos>
-          <Info>김로렌</Info>
-          <Info>웹프론트엔드팀</Info>
-          <Info>lorem.kim@meshkorea.net</Info>
+          <Info>{name}</Info>
+          <Info>{department}</Info>
+          <Info>{email}</Info>
         </InputInfos>
       </InputInfoContainer>
       <Button marginTop="165px" marginBottom="16px" onClick={handleSignupClick}>

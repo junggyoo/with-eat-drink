@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -11,6 +11,7 @@ interface ButtonProps {
   marginBottom?: string;
   marginLeft?: string;
   fontSize?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -25,6 +26,7 @@ export default function Button({
   marginRight,
   marginBottom,
   marginLeft,
+  disabled,
   onClick,
 }: ButtonProps) {
   return (
@@ -39,6 +41,7 @@ export default function Button({
         marginBottom={marginBottom}
         marginLeft={marginLeft}
         fontSize={fontSize}
+        disabled={disabled}
         onClick={onClick}
       >
         {children}
@@ -80,4 +83,13 @@ const ButtonWrapper = styled.button<Omit<ButtonProps, "children">>`
   font-weight: 600;
 
   border-radius: 22px;
+
+  ${({ disabled }) => {
+    if (disabled) {
+      return css`
+        background-color: #ccc;
+        color: #fff;
+      `;
+    }
+  }}
 `;
