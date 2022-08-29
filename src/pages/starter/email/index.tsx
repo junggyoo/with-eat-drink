@@ -8,13 +8,13 @@ import {
 } from "../components";
 import Back from "public/icons/back.svg";
 import { useRecoilState } from "recoil";
-import { emailState } from "src/states/starter";
+import { starterState } from "src/states/starter";
 
 export default function StarterEmail() {
-  const [email, setEmail] = useRecoilState(emailState);
+  const [starter, setStarter] = useRecoilState(starterState);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    setStarter({ ...starter, email: e.target.value });
   };
 
   const handleNextButtonClick = () => {
@@ -33,14 +33,14 @@ export default function StarterEmail() {
         <StarterInputField>이메일</StarterInputField>
         <StarterTextInput
           placeholder="lorem@meshkorea.net"
-          value={email}
+          value={starter.email}
           onChange={handleInputChange}
         />
       </InputContainer>
       <Button
         marginTop="165px"
         marginBottom="16px"
-        disabled={!email}
+        disabled={!starter.email}
         onClick={handleNextButtonClick}
       >
         다음

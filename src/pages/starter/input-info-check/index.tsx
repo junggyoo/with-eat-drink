@@ -3,11 +3,11 @@ import { Button, IconButton } from "src/components";
 import { StarterLayout } from "../components";
 import Back from "public/icons/back.svg";
 import styled from "styled-components";
-import { useRecoilValue } from "recoil";
-import { starterInputState } from "src/states/starter";
+import { useRecoilValue, useResetRecoilState } from "recoil";
+import { starterState } from "src/states/starter";
 
 export default function InputInfoCheck() {
-  const { name, department, email } = useRecoilValue(starterInputState);
+  const { name, department, email } = useRecoilValue(starterState);
 
   const handleSignupClick = () => {
     router.push("/login");

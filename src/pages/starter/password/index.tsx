@@ -8,19 +8,19 @@ import {
 } from "../components";
 import Back from "public/icons/back.svg";
 import { useRecoilState } from "recoil";
-import { passwordState } from "src/states/starter";
+import { starterState } from "src/states/starter";
 
 export default function StarterPassword() {
-  const [password, setPassword] = useRecoilState(passwordState);
+  const [starter, setStarter] = useRecoilState(starterState);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     type: "password" | "confirmPassword",
   ) => {
     if (type === "password") {
-      setPassword({ ...password, password: e.target.value });
+      setStarter({ ...starter, password: e.target.value });
     } else {
-      setPassword({ ...password, confirmPassword: e.target.value });
+      setStarter({ ...starter, confirmPassword: e.target.value });
     }
   };
 
@@ -41,14 +41,14 @@ export default function StarterPassword() {
         <StarterTextInput
           type="password"
           placeholder="비밀번호를 입력해주세요."
-          value={password.password}
+          value={starter.password}
           onChange={(e) => handleInputChange(e, "password")}
         />
         <StarterInputField>비밀번호 확인</StarterInputField>
         <StarterTextInput
           type="password"
           placeholder="비밀번호를 재입력해주세요."
-          value={password.confirmPassword}
+          value={starter.confirmPassword}
           onChange={(e) => handleInputChange(e, "confirmPassword")}
         />
       </InputContainer>
@@ -56,7 +56,7 @@ export default function StarterPassword() {
         marginTop="165px"
         marginBottom="16px"
         disabled={
-          !(password.password.length > 0 && password.confirmPassword.length > 0)
+          !(starter.password.length > 0 && starter.confirmPassword.length > 0)
         }
         onClick={handleNextButtonClick}
       >

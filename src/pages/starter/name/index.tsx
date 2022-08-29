@@ -1,7 +1,7 @@
 import router from "next/router";
 import { useRecoilState } from "recoil";
 import { Button } from "src/components";
-import { nameState } from "src/states/starter";
+import { starterState } from "src/states/starter";
 import {
   StarterInputField,
   StarterTextInput,
@@ -10,10 +10,10 @@ import {
 } from "../components";
 
 export default function StarterName() {
-  const [name, setName] = useRecoilState(nameState);
+  const [starter, setStarter] = useRecoilState(starterState);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    setStarter({ ...starter, name: e.target.value });
   };
 
   const handleNextButtonClick = () => {
@@ -26,14 +26,14 @@ export default function StarterName() {
         <StarterInputField>이름을 알려주세요</StarterInputField>
         <StarterTextInput
           placeholder="김로렌"
-          value={name}
+          value={starter.name}
           onChange={handleInputChange}
         />
       </InputContainer>
       <Button
         marginTop="165px"
         marginBottom="16px"
-        disabled={!name}
+        disabled={!starter.name}
         onClick={handleNextButtonClick}
       >
         다음

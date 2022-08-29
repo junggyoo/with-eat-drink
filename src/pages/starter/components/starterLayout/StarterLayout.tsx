@@ -2,6 +2,8 @@ import styled from "styled-components";
 import router from "next/router";
 import { IconButton, NavHeader } from "src/components";
 import Close from "public/icons/close.svg";
+import { useResetRecoilState } from "recoil";
+import { starterState } from "src/states/starter";
 
 interface StarterLayoutWrapperProps {
   title?: string;
@@ -14,7 +16,9 @@ export default function StarterLayout({
   leftNav,
   children,
 }: StarterLayoutWrapperProps) {
+  const resetState = useResetRecoilState(starterState);
   const handleCloseButtonClick = () => {
+    resetState();
     router.push("/");
   };
   return (

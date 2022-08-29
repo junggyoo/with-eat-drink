@@ -8,13 +8,13 @@ import {
 } from "../components";
 import Back from "public/icons/back.svg";
 import { useRecoilState } from "recoil";
-import { departmentState } from "src/states/starter";
+import { starterState } from "src/states/starter";
 
 export default function StartDepartment() {
-  const [department, setDepartment] = useRecoilState(departmentState);
+  const [starter, setStarter] = useRecoilState(starterState);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDepartment(e.target.value);
+    setStarter({ ...starter, department: e.target.value });
   };
 
   const handleNextButtonClick = () => {
@@ -34,14 +34,14 @@ export default function StartDepartment() {
         </StarterInputField>
         <StarterTextInput
           placeholder="웹프론트엔드팀"
-          value={department}
+          value={starter.department}
           onChange={handleInputChange}
         />
       </InputContainer>
       <Button
         marginTop="165px"
         marginBottom="16px"
-        disabled={!department}
+        disabled={!starter.department}
         onClick={handleNextButtonClick}
       >
         다음
